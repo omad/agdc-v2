@@ -63,6 +63,7 @@ extensions = [
     'sphinx.ext.extlinks',
     'sphinxcontrib.plantuml',
     'sphinx_click.ext',
+    'sphinx_nbexamples',
     'click_utils'
 ]
 
@@ -145,6 +146,18 @@ intersphinx_mapping = {
 }
 
 graphviz_output_format = 'svg'
+
+# -- Options relating to Jupyter Notebook Examples
+#process_examples = not on_rtd
+example_gallery_config = {
+    'examples_dirs': ['notebook_examples/notebooks'],
+    'pattern': '.*.ipynb',
+    # 'preprocess': False,
+    'dont_preprocess': True,
+    'urls': 'https://nbviewer.jupyter.org/github/data-cube/agdc-v2-examples/blob/master/'
+
+
+}
 
 # -- Options for HTML output ----------------------------------------------
 

@@ -26,6 +26,7 @@ and  related data from multiple satellite and other acquisition systems.
    user/intro.rst
    user/guide.rst
    user/config.rst
+   notebooks/index.rst
 
 
 
