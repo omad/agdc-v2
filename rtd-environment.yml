@@ -24,6 +24,7 @@ dependencies:
 - pathlib
 - sphinx
 - sphinx_rtd_theme
+- sphinx-nbexamples
 - pip:
     - sphinxcontrib-plantuml
     - sphinx-click
