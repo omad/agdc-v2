@@ -48,7 +48,7 @@ pathos==0.2.2.1
 pbr==5.1.1
 pendulum==2.0.4
 pluggy==0.8.1
-pox==0.2.4
+pox==0.2.5
 ppft==1.6.4.8
 psycopg2==2.7.6.1
 py==1.7.0
