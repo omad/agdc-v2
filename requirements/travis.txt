@@ -49,7 +49,7 @@ pbr==5.1.1
 pendulum==2.0.4
 pluggy==0.8.1
 pox==0.2.5
-ppft==1.6.4.8
+ppft==1.6.4.9
 psycopg2==2.7.6.1
 py==1.7.0
 pycodestyle==2.4.0
