@@ -45,7 +45,7 @@ objgraph==3.4.0
 OWSLib==0.17.1
 pandas==0.24.0
 pathos==0.2.3
-pbr==5.1.1
+pbr==5.1.2
 pendulum==2.0.4
 pluggy==0.8.1
 pox==0.2.5
