@@ -4,6 +4,7 @@ import datetime
 import logging
 import sys
 from collections import OrderedDict
+from textwrap import dedent
 from typing import Iterable, Mapping, MutableMapping, Any
 
 import click
@@ -69,7 +70,7 @@ def load_datasets_for_update(doc_stream, index):
         uuid = ds.id
 
         if uuid is None:
-            return None, None, "Metadata document it missing id field"
+            return None, None, "Metadata document is missing id field"
 
         existing = index.datasets.get(uuid)
         if existing is None:
@@ -203,13 +204,13 @@ def parse_update_rules(keys_that_can_change):
 @click.option('--location-policy',
               type=click.Choice(['keep', 'archive', 'forget']),
               default='keep',
-              help='''What to do with previously recorded dataset location
-'keep' - keep as alternative location [default]
-'archive' - mark as archived
-'forget' - remove from the index
-''')
-@click.argument('dataset-paths',
-                type=click.Path(exists=True, readable=True, writable=False), nargs=-1)
+              help=dedent('''
+              What to do with previously recorded dataset location
+              'keep' - keep as alternative location [default]
+              'archive' - mark as archived
+              'forget' - remove from the index
+                '''))
+@click.argument('dataset-paths', nargs=-1)
 @ui.pass_index()
 def update_cmd(index, keys_that_can_change, dry_run, location_policy, dataset_paths):
     def loc_action(action, new_ds, existing_ds, action_name):
@@ -375,17 +376,17 @@ def info_cmd(index: Index, show_sources: bool, show_derived: bool,
              f: str,
              max_depth: int,
              ids: Iterable[str]) -> None:
-    # Using an array wrapper to get around the lack of "nonlocal" in py2
-    missing_datasets = [0]
+    missing_datasets = 0
 
     def get_datasets(ids):
+        nonlocal missing_datasets
         for id_ in ids:
             dataset = index.datasets.get(id_, include_sources=show_sources)
             if dataset:
                 yield dataset
             else:
                 click.echo('%s missing' % id_, err=True)
-                missing_datasets[0] += 1
+                missing_datasets += 1
 
     _OUTPUT_WRITERS[f](
         build_dataset_info(index,
@@ -395,7 +396,7 @@ def info_cmd(index: Index, show_sources: bool, show_derived: bool,
                            max_depth=max_depth)
         for dataset in get_datasets(ids)
     )
-    sys.exit(missing_datasets[0])
+    sys.exit(missing_datasets)
 
 
 @dataset_cmd.command('search')

@@ -6,7 +6,7 @@ import logging
 import warnings
 from collections import namedtuple
 from uuid import UUID
-from typing import Any, Iterable, Mapping, Set, Tuple, Union, List
+from typing import Any, Iterable, Set, Tuple, Union, List
 
 from datacube.model import Dataset, DatasetType
 from datacube.model.utils import flatten_datasets
@@ -38,7 +38,7 @@ class DatasetResource(object):
         """
         Get dataset by id
 
-        :param UUID id_: id of the dataset to retrieve
+        :param Union[UUID, str] id_: id of the dataset to retrieve
         :param bool include_sources: get the full provenance graph?
         :rtype: Dataset
         """
@@ -95,7 +95,7 @@ class DatasetResource(object):
         """
         Have we already indexed this dataset?
 
-        :param typing.Union[UUID, str] id_: dataset id
+        :param Union[UUID, str] id_: dataset id
         :rtype: bool
         """
         with self._db.connect() as connection:
@@ -107,7 +107,7 @@ class DatasetResource(object):
 
         For every supplied id check if database contains a dataset with that id.
 
-        :param [typing.Union[UUID, str]] ids_: list of dataset ids
+        :param [Union[UUID, str]] ids_: list of dataset ids
 
         :rtype: [bool]
         """
@@ -291,7 +291,7 @@ class DatasetResource(object):
         """
         Mark datasets as archived
 
-        :param list[UUID] ids: list of dataset ids to archive
+        :param Iterable[UUID] ids: list of dataset ids to archive
         """
         with self._db.begin() as transaction:
             for id_ in ids:
@@ -301,7 +301,7 @@ class DatasetResource(object):
         """
         Mark datasets as not archived
 
-        :param list[UUID] ids: list of dataset ids to restore
+        :param Iterable[UUID] ids: list of dataset ids to restore
         """
         with self._db.begin() as transaction:
             for id_ in ids:
@@ -328,7 +328,7 @@ class DatasetResource(object):
         """
         Get the list of storage locations for the given dataset id
 
-        :param typing.Union[UUID, str] id_: dataset id
+        :param Union[UUID, str] id_: dataset id
         :rtype: list[str]
         """
         if isinstance(id_, Dataset):
@@ -342,7 +342,7 @@ class DatasetResource(object):
         """
         Find locations which have been archived for a dataset
 
-        :param typing.Union[UUID, str] id_: dataset id
+        :param Union[UUID, str] id_: dataset id
         :rtype: list[str]
         """
         if isinstance(id_, Dataset):
@@ -356,7 +356,7 @@ class DatasetResource(object):
         """
         Get each archived location along with the time it was archived.
 
-        :param typing.Union[UUID, str] id_: dataset id
+        :param Union[UUID, str] id_: dataset id
         :rtype: List[Tuple[str, datetime.datetime]]
         """
         if isinstance(id_, Dataset):
@@ -370,7 +370,7 @@ class DatasetResource(object):
         """
         Add a location to the dataset if it doesn't already exist.
 
-        :param typing.Union[UUID, str] id_: dataset id
+        :param Union[UUID, str] id_: dataset id
         :param str uri: fully qualified uri
         :returns bool: Was one added?
         """
@@ -400,7 +400,7 @@ class DatasetResource(object):
         """
         Remove a location from the dataset if it exists.
 
-        :param typing.Union[UUID, str] id_: dataset id
+        :param Union[UUID, str] id_: dataset id
         :param str uri: fully qualified uri
         :returns bool: Was one removed?
         """
@@ -416,7 +416,7 @@ class DatasetResource(object):
         """
         Archive a location of the dataset if it exists.
 
-        :param typing.Union[UUID, str] id_: dataset id
+        :param Union[UUID, str] id_: dataset id
         :param str uri: fully qualified uri
         :return bool: location was able to be archived
         """
@@ -432,7 +432,7 @@ class DatasetResource(object):
         """
         Un-archive a location of the dataset if it exists.
 
-        :param typing.Union[UUID, str] id_: dataset id
+        :param Union[UUID, str] id_: dataset id
         :param str uri: fully qualified uri
         :return bool: location was able to be restored
         """
