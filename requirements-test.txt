@@ -70,7 +70,7 @@ pytzdata==2018.9
 PyYAML==3.13
 rasterio==1.0.18
 redis==3.2.0
-regex==2019.02.20
+regex==2019.02.21
 requests==2.21.0
 s3transfer==0.2.0
 SharedArray==3.1.0
