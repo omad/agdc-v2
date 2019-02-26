@@ -28,7 +28,7 @@ graphviz==0.10.1
 hypothesis==4.7.11
 idna==2.8
 isodate==0.6.0
-isort==4.3.8
+isort==4.3.9
 Jinja2==2.10
 jmespath==0.9.4
 jsonschema==3.0.0
@@ -83,4 +83,4 @@ urllib3==1.24.1
 vine==1.2.0
 wrapt==1.11.1
 xarray==0.11.3
-zstandard==0.10.2
+zstandard==0.11.0
