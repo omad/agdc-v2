@@ -4,8 +4,8 @@ astroid==2.2.5
 attrs==19.1.0
 billiard==3.6.0.0
 boto==2.49.0
-boto3==1.9.116
-botocore==1.12.116
+boto3==1.9.117
+botocore==1.12.117
 cachetools==3.1.0
 celery==4.2.1
 certifi==2019.3.9
