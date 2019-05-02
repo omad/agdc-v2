@@ -2,7 +2,7 @@
 
 numpy==1.16.3
 gdal==2.4.0
-netCDF4==1.5.1
+netCDF4==1.5.1.1
 rasterio==1.0.22
 pyzmq==18.0.1
 psycopg2==2.8.2
