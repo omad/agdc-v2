@@ -68,7 +68,7 @@ python-dateutil==2.8.0
 pytz==2019.1
 pytzdata==2019.1
 PyYAML==5.1
-rasterio==1.0.22
+rasterio==1.0.23
 redis==3.2.1
 regex==2019.04.14
 requests==2.21.0
