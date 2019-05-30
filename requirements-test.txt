@@ -1,5 +1,5 @@
 affine==2.2.2
-amqp==2.4.2
+amqp==2.5.0
 astroid==2.2.5
 attrs==19.1.0
 billiard==3.6.0.0
