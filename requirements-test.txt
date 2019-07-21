@@ -5,7 +5,7 @@ attrs==19.1.0
 billiard==3.6.0.0
 boto==2.49.0
 boto3==1.9.191
-botocore==1.12.191
+botocore==1.12.192
 cachetools==3.1.1
 celery==4.3.0
 certifi==2019.6.16
@@ -76,7 +76,7 @@ s3transfer==0.2.1
 SharedArray==3.1.0
 singledispatch==3.4.0.3
 snuggs==1.4.6
-SQLAlchemy==1.3.5
+SQLAlchemy==1.3.6
 toolz==0.10.0
 tzlocal==1.5.1
 urllib3==1.25.3
