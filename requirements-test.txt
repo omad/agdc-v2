@@ -46,7 +46,7 @@ numpy==1.17.2
 objgraph==3.4.1
 OWSLib==0.18.0
 pandas==0.25.1
-pathos==0.2.4
+pathos==0.2.5
 pbr==5.4.3
 pendulum==2.0.5
 pluggy==0.13.0
