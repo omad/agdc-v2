@@ -4,8 +4,8 @@ astroid==2.3.1
 attrs==19.3.0
 billiard==3.6.1.0
 boto==2.49.0
-boto3==1.9.250
-botocore==1.12.250
+boto3==1.9.251
+botocore==1.12.251
 cachetools==3.1.1
 celery==4.3.0
 certifi==2019.9.11
@@ -25,7 +25,7 @@ dill==0.3.1.1
 docopt==0.6.2
 docutils==0.15.2
 graphviz==0.13
-hypothesis==4.41.0
+hypothesis==4.41.1
 idna==2.8
 isodate==0.6.0
 isort==4.3.21
