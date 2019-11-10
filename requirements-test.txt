@@ -32,7 +32,7 @@ isort==4.3.21
 Jinja2==2.10.3
 jmespath==0.9.4
 jsonschema==3.1.1
-kombu==4.6.5
+kombu==4.6.6
 lazy-object-proxy==1.4.3
 lxml==4.4.1
 MarkupSafe==1.1.1
