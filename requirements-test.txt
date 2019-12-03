@@ -19,7 +19,7 @@ cligj==0.5.0
 cloudpickle==1.2.2
 compliance-checker==4.3.1
 coverage==4.5.4
-coveralls==1.9.1
+coveralls==1.9.2
 dask==2.8.1
 dill==0.3.1.1
 docopt==0.6.2
